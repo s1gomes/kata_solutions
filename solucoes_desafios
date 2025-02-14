@@ -1,0 +1,95 @@
+Desafio 1
+  
+The Office I - Outed
+  
+Solução em Dart:
+
+  String outed(Map<String, int> meet, String boss) {
+    var meetColleagues = meet.length;
+    var totalMeetHappines = 0;
+
+    meet.forEach((k, v) {
+      if (k == boss) {
+        totalMeetHappines += v * 2;
+      } else {
+        totalMeetHappines += v;
+      }
+    });
+
+    var averageMeetHappiness = totalMeetHappines / meetColleagues;
+
+    return averageMeetHappiness <= 5 ? 'Get Out Now!' : 'Nice Work Champ!';
+  }
+
+
+
+
+Desafio 2
+
+The Office II - Boredom Score
+  
+Solução em Dart:
+
+String boredom(Map<String, String> staff) {
+  var staffBoredom = 0;
+
+  staff.forEach((k, v) {
+    switch (v) {
+      case "accounts":
+        staffBoredom += 1;
+        break;
+      case "finance":
+        staffBoredom += 2;
+        break;
+      case "canteen":
+        staffBoredom += 10;
+        break;
+      case "regulation":
+        staffBoredom += 3;
+        break;
+      case "trading":
+      case "change":
+        staffBoredom += 6;
+        break;
+      case "IS":
+        staffBoredom += 8;
+        break;
+      case "retail":
+      case "cleaning":
+        staffBoredom += 5;
+        break;
+      case "pissing about":
+        staffBoredom += 25;
+      break;
+    }
+  });
+
+  var status = "";
+  if (staffBoredom <= 80) {
+    status = 'kill me now';
+  } else if (staffBoredom > 80 && staffBoredom <= 100) {
+    status = 'i can handle this';
+  } else {
+    status = 'party time!!';
+  }
+
+  return status;
+}
+
+
+Desafio 3
+  
+The Office III - Broken Photocopier
+
+Solução em Java:
+
+public class Kata {
+  public static String broken(final String x) {
+     
+    return x.replace("0", "x").replace("1", "0").replace("x", "1");
+     
+  }  
+}
+
+
+
